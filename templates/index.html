@@ -1,0 +1,39 @@
+{%extends 'layout.html' %}
+
+{%block body%}
+
+
+ <div class="col-md-6"> 
+     <p>
+         Esta aplicación clasifica las hojas de vida de acuerdo al texto que se haya escrito en ellas
+          
+        <ul>
+            <li>Analista datos</li>      
+            <li> RPA</li>
+            <li> WEB_DEVELOPER</li>
+            <li>Área Administrativa  </li>     
+            <li>Área Operativa</li>       
+            <li>Área de IT</li>
+        </ul> 
+        {% with messages = get_flashed_messages()%}
+        {%if messages%}
+            {%for mesage in messages%}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{mesage}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>  
+            {%endfor%}      
+        {%endif%}
+    {%endwith%}
+     </p>
+     por favor seleciona tu hoja de vida en formato ".pdf" o ".docx"          
+     <div class="card car-body">
+        <form action = "/cargarHV" method = "POST" 
+                enctype = "multipart/form-data">
+                <input type = "file" name = "hoja" class="btn btn-danger" />
+                <input type = "submit" class="btn btn-success" value="Cargar Hoja de vida"/>
+            </form>
+    </div>
+</div>
+
+{%endblock%}
