@@ -7,6 +7,7 @@ Sistema para clasificar hojas de vida para una empresa especifica de acuerdo a l
 - Área Administrativa     
 - Área Operativa       
 - Área de IT
+
 Se entrena el modelo con 302 hojas de vida distribuidas en un promedio de 53 hojas de vida por categoría.
 Para seleccionar el mejor  modelo se probaron 3 algoritmos de clasificacion 
 - Support vector machine
